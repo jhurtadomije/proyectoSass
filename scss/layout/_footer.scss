@@ -1,0 +1,74 @@
+/// Estilos para el Footer.
+/// 
+/// Define la apariencia de la sección inferior del sitio, incluyendo títulos, listas de enlaces, iconos sociales y separadores.
+/// 
+/// @example
+///   <footer>
+///     <h6>Contacto</h6>
+///     <ul>
+///       <li><a href="#">Enlace</a></li>
+///     </ul>
+///     <div class="social-icons">
+///       <a href="#"><i class="fab fa-facebook"></i></a>
+///       <a href="#"><i class="fab fa-twitter"></i></a>
+///     </div>
+///     <p>© 2025 Mi Sitio Web</p>
+///   </footer>
+
+/// Estilos para los títulos dentro del footer.
+/// Se establece el color, tamaño de fuente y margen inferior.
+footer h6 {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /// Estilos para las listas dentro del footer.
+  /// Elimina padding, margen y estilos de lista para lograr un diseño limpio.
+  footer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  /// Espaciado inferior para cada elemento de la lista.
+  footer ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /// Transición para los enlaces dentro de la lista del footer.
+  /// Facilita un cambio suave de color al hacer hover.
+  footer ul li a {
+    transition: color 0.3s ease;
+  }
+  
+  /// Estado hover para los enlaces de la lista.
+  /// Se aplica una sombra de texto para realzar el enlace.
+  footer ul li a:hover {
+    text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  }
+  
+  /// Transición para los enlaces en los iconos sociales del footer.
+  footer .social-icons a {
+    transition: color 0.3s ease;
+  }
+  
+  /// Estado hover para los iconos sociales.
+  /// Se aplica una sombra de texto para destacar el icono al interactuar.
+  footer .social-icons a:hover {
+    text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  }
+  
+  /// Estilo para el separador superior en el footer.
+  /// Se utiliza una línea superior para dividir secciones dentro del footer.
+  footer .border-top {
+    border-top: 1px solid var(--secondary-color);
+  }
+  
+  /// Estilos para el texto y enlaces secundarios en el footer.
+  /// Se define un tamaño de fuente ligeramente inferior para elementos secundarios.
+  footer p,
+  footer a {
+    font-size: 0.9rem;
+  }
+  

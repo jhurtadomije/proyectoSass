@@ -1,0 +1,62 @@
+/// Estilos Globales
+/// Aplica tipografía, colores y estilos base para el cuerpo del documento, encabezados, enlaces y botones.
+/// @example
+///   body { ... }
+
+/// Estilo base para el cuerpo del documento.
+/// Se define la fuente, el color del texto, el color de fondo y el line-height para garantizar buena legibilidad.
+body {
+    font-family: var(--font-body);
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+  }
+  
+  /// Estilos para los encabezados h1 y h2.
+  /// Se utiliza la fuente definida para títulos y se aplican estilos de color y sombras de texto para realzarlos.
+  /// @example
+  ///   <h1>Título principal</h1>
+  ///   <h2>Subtítulo</h2>
+  h1, h2 {
+    font-family: var(--font-title);
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  }
+  
+  /// Estilos para los enlaces (<a>).
+  /// Define el tamaño de fuente, la ausencia de subrayado, el color inicial y la transición de color al hacer hover.
+  /// @example
+  ///   <a href="#">Enlace</a>
+  a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s;
+  }
+  
+  /// Estado hover para los enlaces.
+  /// Al pasar el cursor, el color cambia al color primario para destacar la interacción.
+  a:hover {
+    color: var(--primary-color);
+  }
+  
+  /// Estilos base para los botones (.btn).
+  /// Define el fondo, color de texto, padding, borde redondeado y transición para los botones.
+  /// @example
+  ///   <button class="btn">Botón</button>
+  .btn {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s;
+  }
+  
+  /// Estado hover para los botones.
+  /// Al pasar el cursor, el color de fondo cambia al color de acento para indicar la acción.
+  .btn:hover {
+    background-color: var(--accent-color);
+  }
+  

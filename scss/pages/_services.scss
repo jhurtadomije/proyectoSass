@@ -1,0 +1,97 @@
+/// Sección "Servicios".
+/// 
+/// Define los estilos para la sección que muestra los servicios ofrecidos, organizados en una cuadrícula (grid)
+/// y representados mediante tarjetas (cards) con icono, título y descripción.
+/// 
+/// @example
+///   <section id="services">
+///     <div class="services-grid">
+///       <div class="service-card">
+///         <i class="icon-class"></i>
+///         <h3 class="service-card-title">Servicio 1</h3>
+///         <p class="service-card-text">Descripción del servicio.</p>
+///       </div>
+///       <!-- Más tarjetas de servicio -->
+///     </div>
+///   </section>
+#services {
+    padding: 2rem 1rem;
+    margin-top: 0;
+  }
+  
+  /// Cuadrícula de servicios.
+  /// 
+  /// Utiliza CSS Grid para distribuir las tarjetas de servicio de forma adaptable. Se emplea 
+  /// `repeat(auto-fit, minmax(250px, 1fr))` para que se ajusten automáticamente según el espacio disponible.
+  /// 
+  /// @example
+  ///   <div class="services-grid"> ... </div>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+  
+  /// Tarjeta de servicio.
+  /// 
+  /// Cada tarjeta se muestra como un contenedor flexible, centrado, con fondo, borde, redondeado y sombra.
+  /// Se aplica una transición para suavizar la animación en estado hover.
+  /// 
+  /// @example
+  ///   <div class="service-card"> ... </div>
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  /// Estado hover de la tarjeta de servicio.
+  /// Al pasar el cursor, la tarjeta se desplaza hacia arriba y se intensifica la sombra para dar un efecto de elevación.
+  /// 
+  /// @example
+  ///   .service-card:hover { ... }
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /// Estilos para el icono dentro de la tarjeta de servicio.
+  /// Se define el tamaño del icono, se establece el color primario y se añade un margen inferior.
+  /// El uso de `!important` garantiza que este estilo prevalezca sobre otros.
+  .service-card i {
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  /// Título de la tarjeta de servicio.
+  /// Se utiliza la fuente definida para títulos, se establece el tamaño y color, y se aplica un margen inferior.
+  /// 
+  /// @example
+  ///   <h3 class="service-card-title">Servicio 1</h3>
+  .service-card-title {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+  }
+  
+  /// Texto descriptivo de la tarjeta de servicio.
+  /// Se utiliza la fuente del cuerpo, se define el tamaño, el color y se centra el contenido.
+  /// 
+  /// @example
+  ///   <p class="service-card-text">Descripción del servicio.</p>
+  .service-card-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--secondary-color);
+    text-align: center;
+  }
+  

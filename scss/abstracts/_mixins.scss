@@ -1,0 +1,32 @@
+/// Centra un elemento usando Flexbox.
+/// 
+/// Este mixin establece un contenedor como flex, y centra su contenido tanto horizontal
+/// como verticalmente.
+/// 
+/// @example
+///   .contenedor {
+///     @include flex-center;
+///   }
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /// Aplica una transición a una o varias propiedades CSS.
+  /// 
+  /// Este mixin facilita la aplicación de una transición a una propiedad, con duración y
+  /// función de tiempo personalizables.
+  /// 
+  /// @param {String} $property - La propiedad o propiedades a las que se aplicará la transición.
+  /// @param {String} [$duration=0.3s] - La duración de la transición.
+  /// @param {String} [$ease=ease] - La función de tiempo a usar en la transición.
+  /// 
+  /// @example
+  ///   .boton {
+  ///     @include transition(background-color, 0.5s, ease-in-out);
+  ///   }
+  @mixin transition($property, $duration: 0.3s, $ease: ease) {
+    transition: $property $duration $ease;
+  }
+  

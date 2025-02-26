@@ -1,0 +1,111 @@
+/// Animación fadeInHeader.
+/// Hace que el elemento pase de opacidad 0 a 1.
+/// @example
+///   header { animation: fadeInHeader 5s ease-in-out forwards; }
+@keyframes fadeInHeader {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /// Animación fadeIn.
+  /// Hace que el elemento se desvanezca y se desplace verticalmente desde 20px hacia abajo hasta su posición original.
+  /// @example
+  ///   .section.fadeIn { animation: fadeIn 3s ease-in-out forwards; }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /// Animación slideInLeft.
+  /// Hace que el elemento se desplace desde la izquierda (50px fuera) hasta su posición original.
+  /// @example
+  ///   .section.slideInLeft { animation: slideInLeft 3s ease-in-out forwards; }
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /// Animación slideInRight.
+  /// Hace que el elemento se desplace desde la derecha (50px fuera) hasta su posición original.
+  /// @example
+  ///   .section.slideInRight { animation: slideInRight 3s ease-in-out forwards; }
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /// Animación zoomIn.
+  /// Escala el elemento desde 0.8 a 1, mientras ajusta la opacidad de 0 a 1.
+  /// @example
+  ///   .section.zoomIn { animation: zoomIn 3s ease-in-out forwards; }
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /// Clase base para las secciones animadas.
+  /// Inicialmente, el elemento tiene opacidad 0 y se desplaza 20px hacia abajo. La transición
+  /// se aplica para suavizar la aparición. Las variantes .fadeIn, .slideInLeft, .slideInRight y .zoomIn
+  /// aplican animaciones específicas.
+  /// @example
+  ///   <div class="section fadeIn">Contenido</div>
+  .section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .section.fadeIn {
+    animation: fadeIn 3s ease-in-out forwards;
+  }
+  
+  .section.slideInLeft {
+    animation: slideInLeft 3s ease-in-out forwards;
+  }
+  
+  .section.slideInRight {
+    animation: slideInRight 3s ease-in-out forwards;
+  }
+  
+  .section.zoomIn {
+    animation: zoomIn 3s ease-in-out forwards;
+  }
+  
+  /// Animación intensifyBackground.
+  /// Se utiliza para intensificar el fondo, transitando desde un fondo totalmente transparente
+  /// a uno con opacidad completa.
+  /// @example
+  ///   .collapse.navbar-collapse.show { animation: intensifyBackground 0.5s ease-in-out forwards; }
+  @keyframes intensifyBackground {
+    0% { background-color: rgba(255, 248, 231, 0); }
+    100% { background-color: rgba(255, 248, 231, 1); }
+  }
+  

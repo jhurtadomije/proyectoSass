@@ -1,0 +1,56 @@
+/// Archivo principal de estilos (main.scss).
+/// 
+/// Este archivo importa y compila todos los partials que componen el framework Sass del proyecto.
+/// La estructura se organiza de la siguiente forma:
+/// 
+/// 1. Mixins: Reglas reutilizables para centrar, transicionar, etc.
+/// 2. Fuentes: Importación de tipografías e iconos.
+/// 3. Variables y generación del bloque :root: Define variables y las expone como Custom Properties.
+/// 4. Estilos globales: Reglas base para cuerpo, encabezados, enlaces y botones.
+/// 5. Animaciones: Keyframes y clases para animar elementos.
+/// 6. Layout: Estilos para header y footer.
+/// 7. Componentes: Secciones como hero y colecciones.
+/// 8. Páginas: Estilos específicos para secciones (sobre nosotros, servicios, etc.).
+/// 9. Responsividad: Media queries y ajustes para dispositivos móviles.
+/// 
+/// @example
+///   // Compilar con Gulp o Sass watch:
+///   gulp
+///   sass --watch scss/main.scss css/estilos.css
+
+@use './abstracts/mixins' as *;
+
+/// Importación de fuentes (tipografías e iconos)
+@use 'base/fonts';
+
+/// Variables y generación del bloque :root.
+/// Las variables definidas en abstracts/variables se interpolan para crear las custom properties CSS.
+@use 'abstracts/variables';
+@use 'base/root';
+
+/// Estilos Globales.
+/// Incluye reglas base para el cuerpo, encabezados, enlaces y botones.
+@use 'base/base';
+
+/// Animaciones.
+/// Define keyframes y clases para animar elementos.
+@use 'base/animations';
+
+/// Layout.
+/// Incluye estilos para el header y footer.
+@use 'layout/header';
+@use 'layout/footer';
+
+/// Componentes.
+/// Incluye secciones como el hero y las colecciones.
+@use 'components/hero';
+@use 'components/collections';
+
+/// Páginas.
+/// Estilos específicos para secciones como "Sobre Nosotros" y "Servicios".
+@use 'pages/about';
+@use 'pages/services';
+
+/// Responsividad.
+/// Contiene media queries y ajustes para adaptar el diseño a diferentes dispositivos.
+@use 'base/responsive';

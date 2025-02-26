@@ -1,0 +1,14 @@
+// docs.scss
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'base/fonts';
+@import 'base/root';
+@import 'base/base';
+@import 'base/animations';
+@import 'base/responsive';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'components/hero';
+@import 'components/collections';
+@import 'pages/about';
+@import 'pages/services';

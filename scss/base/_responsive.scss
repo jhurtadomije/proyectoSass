@@ -1,0 +1,62 @@
+/// Media queries para responsividad.
+/// Ajusta estilos específicos para dispositivos móviles y tablets.
+/// 
+/// @example
+///   // Los estilos dentro de esta sección se aplican según el ancho de la pantalla.
+
+/// Ajustes para dispositivos móviles (max-width: 768px).
+@media (max-width: 768px) {
+    /// Estilos para el header en móviles.
+    /// Se reduce la altura a 8rem y el padding a 0.5rem para optimizar el espacio.
+    header {
+      height: 8rem;   
+      padding: 0.5rem;
+    }
+    
+    /// La navbar permite que los elementos se envuelvan en múltiples líneas.
+    .navbar {
+      flex-wrap: wrap;
+    }
+    
+    /// Muestra el botón hamburguesa en móviles.
+    .navbar-toggler {
+      display: flex;  // Mostrar el botón hamburguesa
+    }
+    
+    /// Estilos para el contenedor del menú desplegable.
+    /// Se posiciona de forma absoluta justo debajo del header para que no afecte su altura.
+    .collapse.navbar-collapse {
+      position: absolute;
+      top: 100%;      // Debajo del header
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 248, 231, 0.9);
+      flex-direction: column;
+      padding: 0.5rem 0;
+    }
+    
+    /// Los enlaces de la navbar se disponen en columna en móviles,
+    /// sin margen extra a la izquierda.
+    .navbar-nav {
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-left: 0;  // En móvil, el margen extra puede no ser necesario
+    }
+  }
+  
+  /// Ajustes opcionales para tablets (min-width: 769px y max-width: 1024px).
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /// Estilos para el header en tablets: se establece una altura de 10rem y un padding de 0.75rem.
+    header {
+      height: 10rem;
+      padding: 0.75rem;
+    }
+    
+    /// En tablets, los enlaces de la navbar se mantienen en línea con mayor separación.
+    .navbar-nav {
+      flex-direction: row;
+      gap: 1.5rem;
+      margin-left: 2rem;
+    }
+  }
+  

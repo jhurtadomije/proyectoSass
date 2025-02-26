@@ -1,0 +1,93 @@
+@use '../abstracts/mixins' as *;
+
+/// Estilos para el Header y navegación.
+/// 
+/// Este archivo define la apariencia del header, incluyendo el contenedor principal, la barra de navegación, el logo, el botón hamburguesa y otros elementos relacionados.
+/// 
+/// @example
+///   <header>
+///     <nav class="navbar">
+///       <div class="navbar-brand">
+///         <img src="logo.png" alt="Logo">
+///       </div>
+///       <!-- Resto de la navegación -->
+///     </nav>
+///   </header>
+header {
+  background-color: rgba(255, 248, 231, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  animation: fadeInHeader 5s ease-in-out forwards;
+  opacity: 0;
+  height: 15rem;
+  padding: 1rem;
+}
+
+/// Contenedor de la barra de navegación.
+/// Se centra el contenido mediante el mixin `flex-center`, se establece el color, padding y se aplica un margen superior negativo para posicionarlo más arriba dentro del header.
+.navbar {
+  @include flex-center; // Centra el contenido horizontal y verticalmente
+  color: var(--secondary-color);
+  padding: 0.8rem 1rem;
+  margin-top: -5rem;
+}
+
+/// Estilos para el logo dentro de la barra de navegación.
+/// La imagen se define con una altura fija y ocupa el 100% del ancho del contenedor.
+.navbar-brand img {
+  height: 25rem;
+  width: 100%;
+}
+
+/// Estilos para el botón hamburguesa (navbar-toggler).
+/// Se muestra como un contenedor flexible en columna, con espacio entre líneas, para formar el botón que despliega el menú.
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3.5rem;
+  height: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: 0.4rem;
+}
+
+/// Estilos para cada línea del botón hamburguesa.
+/// Se utiliza el mixin `transition` para aplicar transiciones a las propiedades transform y opacity.
+.navbar-toggler .line {
+  background-color: var(--secondary-color);
+  height: 0.3rem;
+  width: 100%;
+  border-radius: 0.15rem;
+  @include transition(transform, 0.3s, ease);
+  @include transition(opacity, 0.3s, ease);
+}
+
+/// Estilos para cada elemento de la lista de navegación.
+/// Se establece padding y una transición en el color para mejorar la experiencia de usuario.
+.nav-item {
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/// Estado hover para los enlaces de la navegación.
+/// Al pasar el cursor, se aplica una sombra de texto compuesta para realzar el enlace.
+.nav-link:hover {
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/// Estilos para el contenedor del menú desplegable (en dispositivos móviles).
+/// Se define una transición para las propiedades max-height y opacity.
+.collapse.navbar-collapse {
+  transition: max-height 0.3s ease, opacity 1s ease;
+}
+
+/// Estado activo del menú desplegable.
+/// Al aplicarse la clase .show, se ejecuta la animación `intensifyBackground` para enfatizar el fondo del menú.
+.collapse.navbar-collapse.show {
+  animation: intensifyBackground 0.5s ease-in-out forwards;
+}

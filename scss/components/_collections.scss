@@ -1,0 +1,55 @@
+/// Sección de Colecciones.
+/// 
+/// Define los estilos para la sección de "Colecciones", que se utiliza para mostrar
+/// elementos destacados, como imágenes en carrusel con sus respectivas leyendas.
+/// 
+/// @example
+///   <section id="collections">
+///     <!-- Carrusel o grid de imágenes -->
+///   </section>
+#collections {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: var(--background-color);
+    margin-bottom: 1rem;
+  }
+  
+  /// Estilos para las imágenes dentro de cada item del carrusel.
+  /// Se aplica un borde redondeado y una sombra para dar profundidad.
+  /// 
+  /// @example
+  ///   <div class="carousel-item">
+  ///     <img src="imagen.jpg" alt="Descripción">
+  ///   </div>
+  .carousel-item img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /// Estilos para el título (h5) de las leyendas del carrusel.
+  /// Se usa la fuente definida para títulos, se establece el tamaño y se aplican sombras de texto.
+  /// 
+  /// @example
+  ///   <div class="carousel-caption">
+  ///     <h5>Título de la imagen</h5>
+  ///   </div>
+  .carousel-caption h5 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  }
+  
+  /// Estilos para el párrafo (p) en las leyendas del carrusel.
+  /// Se utiliza la fuente del cuerpo, se establece el color y se aplican sombras de texto.
+  /// 
+  /// @example
+  ///   <div class="carousel-caption">
+  ///     <p>Descripción de la imagen</p>
+  ///   </div>
+  .carousel-caption p {
+    font-family: var(--font-body);
+    color: var(--background-color);
+    text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  }
+  

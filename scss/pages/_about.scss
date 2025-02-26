@@ -1,0 +1,135 @@
+/// Sección "Sobre Nosotros".
+/// 
+/// Define la apariencia de la sección "Sobre Nosotros", que presenta información acerca de la empresa o el proyecto,
+/// incluyendo un título, imágenes, párrafos descriptivos, un botón de llamada a la acción y enlaces a redes sociales.
+/// 
+/// @example
+///   <section id="about">
+///     <h2>Sobre Nosotros</h2>
+///     <img src="imagen.jpg" alt="Sobre nosotros">
+///     <p>Descripción de la empresa o proyecto.</p>
+///     <a href="#" class="btn">Leer más</a>
+///     <div class="social-icons">
+///       <a href="#"><i class="fab fa-facebook"></i></a>
+///       <a href="#"><i class="fab fa-twitter"></i></a>
+///     </div>
+///   </section>
+#about {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+  }
+  
+  /// Estilos para el encabezado (h2) en la sección "Sobre Nosotros".
+  /// Se centra el texto y se agrega margen inferior para separar el título del contenido.
+  /// La propiedad `order: -1` posiciona el título de forma personalizada dentro del flujo.
+  #about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    order: -1;
+  }
+  
+  /// Estilos para las imágenes en la sección "Sobre Nosotros".
+  /// La imagen se centra, ocupa el 100% del ancho disponible, tiene bordes redondeados y una sombra para dar profundidad.
+  /// 
+  /// @example
+  ///   <img src="imagen.jpg" alt="Sobre nosotros">
+  #about img {
+    align-self: center;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /// Estilos para los párrafos en "Sobre Nosotros".
+  /// Define un margen vertical, centra el texto y usa el color secundario para mejorar la legibilidad.
+  /// 
+  /// @example
+  ///   <p>Descripción sobre nosotros.</p>
+  #about p {
+    margin: 1rem 0;
+    text-align: center;
+    color: var(--secondary-color);
+  }
+  
+  /// Estilos para el botón de llamada a la acción en "Sobre Nosotros".
+  /// Se presenta como un elemento en línea, con fondo, color de texto, padding y borde redondeado.
+  /// Además, se aplica una transición en el estado hover.
+  /// 
+  /// @example
+  ///   <a href="#" class="btn">Leer más</a>
+  #about a.btn {
+    display: inline-block;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  /// Estado hover para el botón de "Sobre Nosotros".
+  /// Cambia el color de fondo al color de acento para indicar la acción.
+  /// 
+  /// @example
+  ///   <a href="#" class="btn">Leer más</a>
+  #about a.btn:hover {
+    background-color: var(--accent-color);
+  }
+  
+  /// Estilos para el contenedor de iconos sociales en "Sobre Nosotros".
+  /// Se agrega un margen superior y se centra el contenido para distribuir los iconos de forma uniforme.
+  /// 
+  /// @example
+  ///   <div class="social-icons">
+  ///     <a href="#"><i class="fab fa-facebook"></i></a>
+  ///   </div>
+  #about .social-icons {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  /// Estilos para los enlaces dentro del contenedor de iconos sociales.
+  /// Se define el color, margen y una transición para el estado hover.
+  /// 
+  /// @example
+  ///   <a href="#">Icono social</a>
+  #about .social-icons a {
+    color: var(--secondary-color);
+    margin: 0 0.8rem;
+    transition: color 0.3s ease;
+  }
+  
+  /// Estado hover para los enlaces sociales.
+  /// Cambia el color al color primario al pasar el cursor.
+  /// 
+  /// @example
+  ///   <a href="#">Icono social</a>
+  #about .social-icons a:hover {
+    color: var(--primary-color);
+  }
+  
+  /// Estilos para los iconos dentro del contenedor social.
+  /// Se establece un tamaño de fuente adecuado para los iconos.
+  /// 
+  /// @example
+  ///   <i class="fab fa-facebook"></i>
+  #about .social-icons i {
+    font-size: 1.8rem;
+  }
+  
+  /// Estado hover para los iconos sociales.
+  /// Aplica una sombra de texto para realzar el icono al interactuar.
+  /// 
+  /// @example
+  ///   <i class="fab fa-facebook"></i>
+  #about .social-icons i:hover {
+    text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  }
+  

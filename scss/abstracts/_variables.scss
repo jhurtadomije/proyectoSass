@@ -1,0 +1,37 @@
+/// Variables para colores, fuentes y sombras utilizadas en el proyecto.
+
+/// Color primario: Usado para elementos destacados y acentos.
+/// @example background-color: $primary-color;
+$primary-color: #d4a373;
+
+/// Color secundario: Usado para textos y elementos principales.
+/// @example color: $secondary-color;
+$secondary-color: #333333;
+
+/// Color de fondo: Se aplica como base para el fondo general de la web.
+/// @example background-color: $background-color;
+$background-color: #fff8e7;
+
+/// Color de acento: Utilizado para hovers y detalles en la interfaz.
+/// @example border-color: $accent-color;
+$accent-color: #b5835a;
+
+/// Fuente para títulos: Se recomienda una fuente moderna y elegante como Montserrat.
+/// @example font-family: $font-title;
+$font-title: "Montserrat", sans-serif;
+
+/// Fuente para el cuerpo del texto: Usada para legibilidad en párrafos y contenido general.
+/// @example font-family: $font-body;
+$font-body: 'Poppins', sans-serif;
+
+/// Sombra primaria: Sombra sutil aplicada a textos o elementos destacados, utilizando el color primario.
+/// @example text-shadow: $shadow-primary;
+$shadow-primary: 1px 1px 5px $primary-color;
+
+/// Sombra de acento: Se utiliza para resaltar elementos en estados hover o para crear profundidad.
+/// @example text-shadow: $shadow-accent;
+$shadow-accent: 0 0 10px $accent-color;
+
+/// Sombra secundaria: Aplica un efecto de sombra con el color secundario, para detalles adicionales.
+/// @example text-shadow: $shadow-secondary;
+$shadow-secondary: 0 0 15px $secondary-color;

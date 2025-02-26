@@ -1,0 +1,1077 @@
+@charset "UTF-8";
+/**
+ * Archivo principal de estilos (main.scss)
+ *
+ * Este archivo importa y compila todos los partials que conforman el framework Sass del proyecto.
+ * La estructura se organiza en:
+ *
+ * 1. Mixins: Reglas reutilizables para centrar, transicionar, etc.
+ * 2. Fuentes: Importación de tipografías e iconos.
+ * 3. Variables y :root: Definición de variables y generación de las custom properties.
+ * 4. Estilos Globales: Reglas base para el cuerpo, encabezados, enlaces, botones, etc.
+ * 5. Animaciones: Keyframes y clases para animar elementos.
+ * 6. Layout: Estilos para header y footer.
+ * 7. Componentes: Secciones como hero y colecciones.
+ * 8. Páginas: Estilos específicos para secciones (Sobre Nosotros, Servicios, etc.).
+ * 9. Responsividad: Media queries y ajustes para dispositivos móviles.
+ *
+ * @example
+ *   // Compilar utilizando Gulp o Sass watch:
+ *   gulp
+ *   sass --watch scss/main.scss css/estilos.css
+ */
+/**
+ * Importación de fuentes e iconos
+ *
+ * Este archivo importa las fuentes utilizadas en el proyecto y la biblioteca de iconos Font Awesome.
+ * 
+ * Se importan:
+ * - Montserrat para los títulos.
+ * - Playfair Display y Poppins para los párrafos y textos generales.
+ * - Font Awesome para iconos.
+ *
+ * @example
+ *   @import 'base/fonts';
+ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+/**
+ * Color primario.
+ * Usado para elementos destacados y acentos.
+ */
+/**
+ * Color secundario.
+ * Usado para textos y elementos principales.
+ */
+/**
+ * Color de fondo.
+ * Se aplica como color base para el fondo general de la web.
+ */
+/**
+ * Color de acento.
+ * Utilizado para hovers y detalles en la interfaz.
+ */
+/**
+ * Fuente para títulos.
+ * Se recomienda usar una fuente moderna y elegante como Montserrat.
+ */
+/**
+ * Fuente para el cuerpo del texto.
+ * Usada para la legibilidad en párrafos y contenido general.
+ */
+/**
+ * Sombra primaria.
+ * Sombra sutil aplicada a textos o elementos destacados, utilizando el color primario.
+ */
+/**
+ * Sombra de acento.
+ * Se utiliza para resaltar elementos en estados hover o para crear profundidad.
+ */
+/**
+ * Sombra secundaria.
+ * Aplica un efecto de sombra con el color secundario, para detalles adicionales.
+ */
+/**
+ * Color primario.
+ * Usado para elementos destacados y acentos.
+ */
+/**
+ * Color secundario.
+ * Usado para textos y elementos principales.
+ */
+/**
+ * Color de fondo.
+ * Se aplica como color base para el fondo general de la web.
+ */
+/**
+ * Color de acento.
+ * Utilizado para hovers y detalles en la interfaz.
+ */
+/**
+ * Fuente para títulos.
+ * Se recomienda usar una fuente moderna y elegante como Montserrat.
+ */
+/**
+ * Fuente para el cuerpo del texto.
+ * Usada para la legibilidad en párrafos y contenido general.
+ */
+/**
+ * Sombra primaria.
+ * Sombra sutil aplicada a textos o elementos destacados, utilizando el color primario.
+ */
+/**
+ * Sombra de acento.
+ * Se utiliza para resaltar elementos en estados hover o para crear profundidad.
+ */
+/**
+ * Sombra secundaria.
+ * Aplica un efecto de sombra con el color secundario, para detalles adicionales.
+ */
+:root {
+  --primary-color: #d4a373;
+  --secondary-color: #333333;
+  --background-color: #fff8e7;
+  --accent-color: #b5835a;
+  --font-title: Montserrat, sans-serif;
+  --font-body: Poppins, sans-serif;
+  --shadow-primary: 1px 1px 5px #d4a373;
+  --shadow-accent: 0 0 10px #b5835a;
+  --shadow-secondary: 0 0 15px #333333;
+}
+
+/**
+ * Estilos Globales
+ *
+ * Aplica tipografía, colores, y estilos base para el cuerpo del documento,
+ * encabezados, enlaces y botones.
+ *
+ * @example
+ *   body { ... }
+ */
+/**
+ * Estilo base para el cuerpo del documento.
+ *
+ * Se definen la fuente, color del texto, color de fondo y line-height para garantizar
+ * una buena legibilidad y consistencia visual en toda la web.
+ */
+body {
+  font-family: var(--font-body);
+  color: var(--secondary-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/**
+ * Estilos para los encabezados h1 y h2.
+ *
+ * Se utiliza la fuente definida para títulos, y se aplican estilos de color y sombras de texto
+ * para realzar los títulos.
+ *
+ * @example
+ *   <h1>Título principal</h1>
+ *   <h2>Subtítulo</h2>
+ */
+h1, h2 {
+  font-family: var(--font-title);
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/**
+ * Estilos para los enlaces (<a>).
+ *
+ * Define el tamaño de fuente, la ausencia de subrayado, el color inicial y la transición
+ * de color al hacer hover.
+ *
+ * @example
+ *   <a href="#">Enlace</a>
+ */
+a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s;
+}
+
+/**
+ * Estado hover para los enlaces.
+ *
+ * Al pasar el cursor, el color cambia al color primario para destacar la interacción.
+ */
+a:hover {
+  color: var(--primary-color);
+}
+
+/**
+ * Estilos base para los botones (.btn).
+ *
+ * Define el fondo, color de texto, padding, borde redondeado y transición para los botones.
+ *
+ * @example
+ *   <button class="btn">Botón</button>
+ */
+.btn {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s;
+}
+
+/**
+ * Estado hover para los botones.
+ *
+ * Al pasar el cursor, el color de fondo cambia al color de acento para indicar la acción.
+ */
+.btn:hover {
+  background-color: var(--accent-color);
+}
+
+/**
+ * Animaciones y transiciones.
+ *
+ * Este archivo define los keyframes utilizados en el proyecto para animar elementos,
+ * así como la clase base `.section` y sus variantes para aplicar animaciones de entrada.
+ *
+ * @example
+ *   <div class="section fadeIn">Contenido</div>
+ */
+/**
+ * Animación fadeInHeader.
+ *
+ * Hace que un elemento se desvanezca de opaco 0 a opaco 1.
+ *
+ * @example
+ *   header {
+ *     animation: fadeInHeader 5s ease-in-out forwards;
+ *   }
+ */
+@keyframes fadeInHeader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/**
+ * Animación fadeIn.
+ *
+ * Desvanece un elemento, moviéndolo verticalmente desde 20px hacia abajo hasta su posición original.
+ *
+ * @example
+ *   .section.fadeIn { animation: fadeIn 3s ease-in-out forwards; }
+ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/**
+ * Animación slideInLeft.
+ *
+ * Hace que un elemento se desplace desde la izquierda (50px fuera) hasta su posición original.
+ *
+ * @example
+ *   .section.slideInLeft { animation: slideInLeft 3s ease-in-out forwards; }
+ */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/**
+ * Animación slideInRight.
+ *
+ * Hace que un elemento se desplace desde la derecha (50px fuera) hasta su posición original.
+ *
+ * @example
+ *   .section.slideInRight { animation: slideInRight 3s ease-in-out forwards; }
+ */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/**
+ * Animación zoomIn.
+ *
+ * Escala un elemento de 0.8 a 1, al mismo tiempo que ajusta la opacidad de 0 a 1.
+ *
+ * @example
+ *   .section.zoomIn { animation: zoomIn 3s ease-in-out forwards; }
+ */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/**
+ * Clase base para las secciones animadas.
+ *
+ * Inicialmente, un elemento con la clase `.section` se muestra con opacidad 0 y desplazado
+ * 20px hacia abajo, y se transiciona en 0.5s.
+ *
+ * Las variantes (.fadeIn, .slideInLeft, .slideInRight, .zoomIn) aplican animaciones específicas.
+ *
+ * @example
+ *   <div class="section fadeIn">Contenido animado</div>
+ */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.section.fadeIn {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+.section.slideInLeft {
+  animation: slideInLeft 3s ease-in-out forwards;
+}
+
+.section.slideInRight {
+  animation: slideInRight 3s ease-in-out forwards;
+}
+
+.section.zoomIn {
+  animation: zoomIn 3s ease-in-out forwards;
+}
+
+/**
+ * Animación intensifyBackground.
+ *
+ * Se utiliza para intensificar el fondo, transitando desde un fondo transparente a uno
+ * totalmente opaco con el color rgba(255, 248, 231, 1).
+ *
+ * @example
+ *   .collapse.navbar-collapse.show { animation: intensifyBackground 0.5s ease-in-out forwards; }
+ */
+@keyframes intensifyBackground {
+  0% {
+    background-color: rgba(255, 248, 231, 0);
+  }
+  100% {
+    background-color: rgb(255, 248, 231);
+  }
+}
+/**
+ * Estilos para el Header y navegación.
+ *
+ * Este archivo define la apariencia del header, que incluye el contenedor principal, la navbar,
+ * el logo, el botón hamburguesa y otros elementos relacionados. Se utilizan mixins para centrar
+ * elementos y aplicar transiciones de forma uniforme.
+ *
+ * @example
+ *   <header>
+ *     <nav class="navbar">
+ *       <div class="navbar-brand">
+ *         <img src="logo.png" alt="Logo">
+ *       </div>
+ *       <!-- Resto de la navegación -->
+ *     </nav>
+ *   </header>
+ */
+header {
+  background-color: rgba(255, 248, 231, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  animation: fadeInHeader 5s ease-in-out forwards;
+  opacity: 0;
+  height: 15rem;
+  padding: 1rem;
+}
+
+/**
+ * .navbar
+ *
+ * Contenedor de la barra de navegación.
+ * Se centra el contenido mediante el mixin `flex-center`, se establece el color, padding y
+ * se aplica un margen superior negativo para posicionarlo más arriba dentro del header.
+ */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color);
+  padding: 0.8rem 1rem;
+  margin-top: -5rem;
+}
+
+/**
+ * .navbar-brand img
+ *
+ * Estilos para el logo dentro de la barra de navegación.
+ * Se define una altura específica para el logo, manteniendo el ancho al 100% del contenedor.
+ */
+.navbar-brand img {
+  height: 25rem;
+  width: 100%;
+}
+
+/**
+ * .navbar-toggler
+ *
+ * Estilos para el botón hamburguesa, que se muestra en dispositivos móviles.
+ * Se configura como un contenedor flexible en columna para formar las líneas del botón.
+ */
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3.5rem;
+  height: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: 0.4rem;
+}
+
+/**
+ * .navbar-toggler .line
+ *
+ * Estilos para cada línea del botón hamburguesa.
+ * Se utiliza el mixin `transition` para aplicar transiciones a las propiedades transform y opacity.
+ */
+.navbar-toggler .line {
+  background-color: var(--secondary-color);
+  height: 0.3rem;
+  width: 100%;
+  border-radius: 0.15rem;
+  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+/**
+ * .nav-item
+ *
+ * Cada elemento de la lista de navegación.
+ * Se define padding y una transición para el color, mejorando la experiencia de usuario.
+ */
+.nav-item {
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/**
+ * .nav-link:hover
+ *
+ * Estado hover para los enlaces de navegación.
+ * Se aplica una sombra de texto compuesta para resaltar el enlace.
+ */
+.nav-link:hover {
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/**
+ * .collapse.navbar-collapse
+ *
+ * Contenedor del menú desplegable en dispositivos móviles.
+ * Se establece una transición para propiedades de altura y opacidad.
+ */
+.collapse.navbar-collapse {
+  transition: max-height 0.3s ease, opacity 1s ease;
+}
+
+/**
+ * .collapse.navbar-collapse.show
+ *
+ * Estado activo del menú desplegable, cuando se aplica la clase `.show`.
+ * Se ejecuta la animación `intensifyBackground` para enfatizar el fondo del menú.
+ */
+.collapse.navbar-collapse.show {
+  animation: intensifyBackground 0.5s ease-in-out forwards;
+}
+
+/**
+ * Estilos para el Footer.
+ *
+ * Este archivo define la apariencia de la sección inferior de la página, incluyendo
+ * los títulos, listas de enlaces, iconos sociales y demás elementos del footer.
+ *
+ * @example
+ *   <footer>
+ *     <h6>Contacto</h6>
+ *     <ul>
+ *       <li><a href="#">Enlace</a></li>
+ *     </ul>
+ *     <div class="social-icons">
+ *       <a href="#"><i class="fab fa-facebook"></i></a>
+ *       <a href="#"><i class="fab fa-twitter"></i></a>
+ *     </div>
+ *     <div class="border-top"></div>
+ *     <p>© 2025 Mi Sitio Web</p>
+ *   </footer>
+ */
+/**
+ * Estilos para los títulos dentro del footer.
+ *
+ * Se aplica un color, tamaño de fuente y margen inferior para separar visualmente el título.
+ */
+footer h6 {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Estilos para las listas dentro del footer.
+ *
+ * Elimina padding y margen, y quita el estilo de lista para lograr un diseño limpio.
+ */
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/**
+ * Estilos para los elementos de lista en el footer.
+ *
+ * Se establece un margen inferior para separar cada elemento.
+ */
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+/**
+ * Estilos para los enlaces dentro de las listas del footer.
+ *
+ * Aplica una transición suave al color para el efecto hover.
+ */
+footer ul li a {
+  transition: color 0.3s ease;
+}
+
+/**
+ * Estado hover para los enlaces dentro de las listas del footer.
+ *
+ * Al pasar el cursor, se aplica una sombra de texto para realzar la interacción.
+ */
+footer ul li a:hover {
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/**
+ * Estilos para los iconos sociales en el footer.
+ *
+ * Se aplica una transición de color para que el efecto hover sea suave.
+ */
+footer .social-icons a {
+  transition: color 0.3s ease;
+}
+
+/**
+ * Estado hover para los iconos sociales.
+ *
+ * Se aplica una sombra de texto para destacar el icono al pasar el cursor.
+ */
+footer .social-icons a:hover {
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/**
+ * Estilo para el separador superior en el footer.
+ *
+ * Se utiliza una línea superior para dividir secciones dentro del footer.
+ */
+footer .border-top {
+  border-top: 1px solid var(--secondary-color);
+}
+
+/**
+ * Estilos para el texto y enlaces secundarios en el footer.
+ *
+ * Se define un tamaño de fuente ligeramente inferior para elementos secundarios.
+ */
+footer p,
+footer a {
+  font-size: 0.9rem;
+}
+
+/**
+ * Estilos para la sección Hero.
+ *
+ * Este archivo define la apariencia y el comportamiento de la sección Hero, que se utiliza
+ * como una zona de impacto visual en la parte superior de la web. Incluye estilos para el contenedor,
+ * pseudo-elementos, títulos, párrafos y botones dentro de la sección.
+ *
+ * @example
+ *   <section class="hero">
+ *     <h1>Título Impactante</h1>
+ *     <p>Subtítulo o descripción</p>
+ *     <a href="#" class="btn">Call to Action</a>
+ *   </section>
+ */
+/**
+ * Contenedor principal de la sección Hero.
+ *
+ * - Ocupa el 100% de la altura de la ventana (100vh).
+ * - Se muestra como un contenedor flexible con dirección columna, alineando el contenido al final.
+ * - La imagen de fondo se adapta (cover) y se centra.
+ * - Se establece la posición relativa para que los pseudo-elementos se posicionen correctamente.
+ */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/**
+ * Pseudo-elemento ::before de la sección Hero.
+ *
+ * Se utiliza para superponer efectos o para proporcionar un fondo adicional sin afectar el contenido.
+ * Se extiende a lo largo de toda la sección.
+ */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/**
+ * Estilos para el título (h1) dentro de la sección Hero.
+ *
+ * Se establece el tamaño de fuente y se aplica una sombra de texto para lograr un efecto visual destacado.
+ */
+.hero h1 {
+  font-size: 2.5rem;
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  margin-bottom: 1rem;
+}
+
+/**
+ * Estilos para el párrafo (p) dentro de la sección Hero.
+ *
+ * Se aplica una sombra de texto similar a la del título, se define un tamaño de fuente adecuado
+ * y se establece un margen inferior para separar el contenido.
+ */
+.hero p {
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/**
+ * Estilos para los botones (.btn) dentro de la sección Hero.
+ *
+ * Se agrega un margen inferior para separar el botón del resto del contenido.
+ */
+.hero .btn {
+  margin-bottom: 2rem;
+}
+
+/**
+ * Estilos para la sección de Colecciones.
+ *
+ * Este archivo define los estilos para la sección de "Colecciones", que incluye
+ * un contenedor principal, imágenes del carrusel y sus leyendas. Se emplea para mostrar
+ * elementos como propiedades destacadas o colecciones de imágenes.
+ *
+ * @example
+ *   <section id="collections">
+ *     <!-- Contenido del carrusel -->
+ *   </section>
+ */
+/**
+ * Contenedor principal de la sección de colecciones.
+ *
+ * Se aplica padding, centrado de texto, color de fondo y margen inferior para separar la sección.
+ */
+#collections {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: var(--background-color);
+  margin-bottom: 1rem;
+}
+
+/**
+ * Estilos para las imágenes de los items del carrusel.
+ *
+ * Se aplica un borde redondeado y una sombra para dar un efecto de profundidad.
+ *
+ * @example
+ *   <div class="carousel-item">
+ *     <img src="imagen.jpg" alt="Descripción">
+ *   </div>
+ */
+.carousel-item img {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Estilos para el título (h5) en las leyendas del carrusel.
+ *
+ * Se utiliza la fuente definida para títulos, se ajusta el tamaño y se aplican sombras
+ * de texto para destacar el título.
+ *
+ * @example
+ *   <div class="carousel-caption">
+ *     <h5>Título de la imagen</h5>
+ *   </div>
+ */
+.carousel-caption h5 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--secondary-color);
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/**
+ * Estilos para el párrafo en las leyendas del carrusel.
+ *
+ * Se utiliza la fuente definida para el cuerpo, se establece el color de fondo como
+ * color de texto, y se aplica sombra para mejorar la legibilidad sobre fondos variables.
+ *
+ * @example
+ *   <div class="carousel-caption">
+ *     <p>Descripción de la imagen</p>
+ *   </div>
+ */
+.carousel-caption p {
+  font-family: var(--font-body);
+  color: var(--background-color);
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/**
+ * Estilos para la sección "Sobre Nosotros" (#about).
+ *
+ * Este archivo define la apariencia de la sección "Sobre Nosotros", la cual incluye un contenedor principal,
+ * encabezado, imágenes, párrafos, botones y iconos sociales. Se utiliza para proporcionar información sobre la
+ * empresa o el proyecto.
+ *
+ * @example
+ *   <section id="about">
+ *     <h2>Sobre Nosotros</h2>
+ *     <img src="nosotros.jpg" alt="Imagen sobre nosotros">
+ *     <p>Descripción de la empresa o proyecto.</p>
+ *     <a href="#" class="btn">Leer más</a>
+ *     <div class="social-icons">
+ *       <a href="#"><i class="fab fa-facebook"></i></a>
+ *       <a href="#"><i class="fab fa-twitter"></i></a>
+ *     </div>
+ *   </section>
+ */
+/**
+ * Contenedor principal de la sección "Sobre Nosotros".
+ *
+ * Se aplica un padding, se usa flexbox para organizar el contenido en columnas y se centra el contenido con
+ * un gap entre elementos.
+ */
+#about {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+/**
+ * Estilos para el encabezado (h2) de la sección.
+ *
+ * Se centra el texto, se agrega un margen inferior para separarlo del resto del contenido y se cambia el orden
+ * para posicionarlo de manera personalizada.
+ */
+#about h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  order: -1;
+}
+
+/**
+ * Estilos para las imágenes dentro de la sección "Sobre Nosotros".
+ *
+ * Se centra la imagen, se ajusta para que ocupe el 100% del contenedor, se redondean los bordes y se aplica
+ * una sombra para dar un efecto de profundidad.
+ */
+#about img {
+  align-self: center;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Estilos para los párrafos de la sección "Sobre Nosotros".
+ *
+ * Se establece un margen vertical y se centra el texto, utilizando el color secundario para el contenido.
+ */
+#about p {
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+/**
+ * Estilos para el botón dentro de la sección "Sobre Nosotros".
+ *
+ * El botón se muestra como un elemento en línea, con colores definidos, padding, borde redondeado y una transición
+ * en el estado hover.
+ *
+ * @example
+ *   <a href="#" class="btn">Leer más</a>
+ */
+#about a.btn {
+  display: inline-block;
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+#about a.btn:hover {
+  background-color: var(--accent-color);
+}
+
+/**
+ * Estilos para el contenedor de iconos sociales en la sección "Sobre Nosotros".
+ *
+ * Se añade un margen superior y se centra el contenido para que los iconos se distribuyan de forma uniforme.
+ */
+#about .social-icons {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/**
+ * Estilos para los enlaces dentro de los iconos sociales.
+ *
+ * Se define el color inicial, margen y una transición en el color para el estado hover.
+ */
+#about .social-icons a {
+  color: var(--secondary-color);
+  margin: 0 0.8rem;
+  transition: color 0.3s ease;
+}
+
+#about .social-icons a:hover {
+  color: var(--primary-color);
+}
+
+/**
+ * Estilos para los iconos dentro de la sección de iconos sociales.
+ *
+ * Se define el tamaño de la fuente para los iconos y se aplica una sombra de texto en el estado hover.
+ */
+#about .social-icons i {
+  font-size: 1.8rem;
+}
+
+#about .social-icons i:hover {
+  text-shadow: var(--shadow-primary), var(--shadow-accent), var(--shadow-secondary);
+}
+
+/**
+ * Estilos para la sección "Servicios".
+ *
+ * Este archivo define la apariencia de la sección destinada a mostrar los servicios ofrecidos.
+ * Incluye el contenedor principal, la cuadrícula de servicios (cards), y los estilos de cada tarjeta.
+ *
+ * @example
+ *   <section id="services">
+ *     <div class="services-grid">
+ *       <div class="service-card">
+ *         <i class="icon-class"></i>
+ *         <h3 class="service-card-title">Servicio 1</h3>
+ *         <p class="service-card-text">Descripción del servicio.</p>
+ *       </div>
+ *       <!-- Más tarjetas -->
+ *     </div>
+ *   </section>
+ */
+/**
+ * Contenedor principal de la sección "Servicios".
+ *
+ * Se aplica padding y se elimina cualquier margen superior para una correcta separación visual.
+ */
+#services {
+  padding: 2rem 1rem;
+  margin-top: 0;
+}
+
+/**
+ * Cuadrícula de servicios.
+ *
+ * Utiliza CSS Grid para crear una distribución adaptable. Se emplea `repeat(auto-fit, minmax(250px, 1fr))`
+ * para ajustar automáticamente el número de columnas en función del espacio disponible, con un gap de 1.5rem.
+ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+/**
+ * Tarjeta de servicio.
+ *
+ * Cada tarjeta se muestra como un contenedor flexible, con fondo, borde, redondeado, padding y sombra.
+ * Se aplica una transición para suavizar la animación al hacer hover.
+ *
+ * @example
+ *   <div class="service-card">
+ *     <!-- Icono, título y texto -->
+ *   </div>
+ */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/**
+ * Estado hover para la tarjeta de servicio.
+ *
+ * Al pasar el cursor, la tarjeta se desplaza hacia arriba y se intensifica la sombra para dar un efecto de elevación.
+ */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Estilos para el icono dentro de la tarjeta de servicio.
+ *
+ * Se define el tamaño del icono y se establece el color primario. Se utiliza !important para asegurar que
+ * este estilo prevalezca sobre otros posibles estilos.
+ */
+.service-card i {
+  font-size: 1.5rem;
+  color: var(--primary-color) !important;
+  margin-bottom: 0.5rem;
+}
+
+/**
+ * Título de la tarjeta de servicio.
+ *
+ * Se aplica la fuente definida para títulos, se establece el tamaño de fuente y el color secundario,
+ * junto con un margen inferior para separar el título del contenido.
+ */
+.service-card-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+/**
+ * Texto descriptivo de la tarjeta de servicio.
+ *
+ * Se utiliza la fuente del cuerpo para el texto, se define el tamaño y se centra el contenido,
+ * utilizando el color secundario.
+ */
+.service-card-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+/**
+ * Media queries para responsividad.
+ *
+ * Ajusta estilos específicos en función del tamaño de la pantalla.
+ *
+ * @example
+ *   @import 'base/responsive';
+ */
+/* Ajustes para dispositivos móviles (ancho máximo 768px) */
+@media (max-width: 768px) {
+  /**
+   * Header en móvil:
+   * - Reduce la altura a 8rem.
+   * - Disminuye el padding a 0.5rem.
+   */
+  header {
+    height: 8rem;
+    padding: 0.5rem;
+  }
+  /**
+   * Navbar:
+   * Permite que los elementos se envuelvan en caso de que no quepan en una línea.
+   */
+  .navbar {
+    flex-wrap: wrap;
+  }
+  /**
+   * Botón hamburguesa:
+   * Se muestra en móvil para activar el menú.
+   */
+  .navbar-toggler {
+    display: flex;
+  }
+  /**
+   * Menú desplegable:
+   * Posicionado de forma absoluta justo debajo del header para no afectar su altura.
+   * Se muestra en columna con un fondo semitransparente.
+   */
+  .collapse.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 248, 231, 0.9);
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+  /**
+   * Navbar en móvil:
+   * Los enlaces se apilan verticalmente sin margen extra a la izquierda.
+   */
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-left: 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  /**
+   * Header en tablets:
+   * - Altura de 10rem.
+   * - Padding de 0.75rem.
+   */
+  header {
+    height: 10rem;
+    padding: 0.75rem;
+  }
+  /**
+   * Navbar en tablets:
+   * Se mantienen los enlaces en línea con mayor espacio entre ellos y un margen izquierdo para separarlos del logo.
+   */
+  .navbar-nav {
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-left: 2rem;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */

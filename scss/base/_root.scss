@@ -1,0 +1,21 @@
+/// Genera el bloque :root con las Custom Properties utilizando las variables definidas en abstracts/_variables.scss.
+///
+/// Las variables Sass se interpolan para definir las propiedades CSS, lo que permite utilizar estos valores en el resto de los estilos.
+/// @example
+///   :root {
+///     --primary-color: #d4a373;
+///     ...
+///   }
+@use '../abstracts/variables' as vars;
+
+:root {
+  --primary-color: #{vars.$primary-color};
+  --secondary-color: #{vars.$secondary-color};
+  --background-color: #{vars.$background-color};
+  --accent-color: #{vars.$accent-color};
+  --font-title: #{vars.$font-title};
+  --font-body: #{vars.$font-body};
+  --shadow-primary: #{vars.$shadow-primary};
+  --shadow-accent: #{vars.$shadow-accent};
+  --shadow-secondary: #{vars.$shadow-secondary};
+}
